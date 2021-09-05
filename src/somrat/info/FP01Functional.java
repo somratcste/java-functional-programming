@@ -18,7 +18,8 @@ public class FP01Functional {
     private static void printAllNumbersInListFunctional(List<Integer> numbers) {
 //        numbers.stream().forEach(FP01Functional::print);
         numbers.stream()
-                .filter(FP01Functional::isEven)
+//                .filter(FP01Functional::isEven)
+                .filter(number -> number % 2 == 0)
                 .forEach(System.out::println);
     }
 }
