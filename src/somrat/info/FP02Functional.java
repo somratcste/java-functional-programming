@@ -14,6 +14,8 @@ public class FP02Functional {
     }
     private static int addListFunctional(List<Integer> numbers) {
         return numbers.stream()
-                .reduce(0, FP02Functional::sum);
+//            .reduce(0, FP02Functional::sum);
+//            .reduce(0, (a,b) -> a + b);
+            .reduce(0, Integer::sum);
     }
 }
