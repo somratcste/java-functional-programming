@@ -1,6 +1,7 @@
 package somrat.info;
 
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -41,5 +42,15 @@ public class FP03FunctionalInterfaces {
                 .filter(isEvenPredicate2)
                 .map(squareFunction2)
                 .forEach(sysoutConsumer2);
+
+        BinaryOperator<Integer> sumBinaryOperator = Integer::sum;
+        BinaryOperator<Integer> sumBinaryOperator2 = new BinaryOperator<Integer>() {
+            @Override
+            public Integer apply(Integer integer, Integer integer2) {
+                return integer + integer2;
+            }
+        };
+        int sum = numbers.stream()
+                .reduce(0, sumBinaryOperator2);
     }
 }
